@@ -22,4 +22,23 @@ def hailstone(num):
         Traceback (most recent call last):
         StopIteration
     '''
-    pass
+    while True:
+        yield num
+        if num == 1:
+            break
+        elif num % 2 == 0:
+            num = num // 2
+        else:
+            num = 3 * num + 1
+
+hailstone(6) 
+my_gen = hailstone(6) 
+[item for item in my_gen]
+my_gen = hailstone(5) 
+print(next(my_gen)) 
+print(next(my_gen))
+print(next(my_gen))
+print(next(my_gen))
+print(next(my_gen))
+print(next(my_gen))
+print(next(my_gen))
